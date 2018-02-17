@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ convertToDate({ dt: weatherDay.dt }) | date: dateFormat }}</h3>
+    </div>
+    <div class="panel-body">
+        <ui>
+            <li>
+                Daytime temperature: {{ convertToStandard({ daytimeTemp: weatherDay.main.temp }) }} Celcius 
+                <ui> 
+                    (Max : {{convertToStandard({ daytimeTemp: weatherDay.main.temp_max })}} and Min : {{convertToStandard({ daytimeTemp: weatherDay.main.temp_max })}})
+                    <li>
+                        Clouds: {{weatherDay.clouds.all}}%
+                    </li>
+                    <li>
+                        Pressure Level: {{convertToPressure({ psi: weatherDay.main.pressure }) }}
+                        psi
+                    </li>
+                    <li>
+                        Humidity Level: {{weatherDay.main.humidity}}%
+                    </li>
+                    <li>
+                        Wind Speed: {{weatherDay.wind.speed}} miles
+                    </li>
+                </ui>
+            </li>
+        </ui>
+    </div>
+</div>
